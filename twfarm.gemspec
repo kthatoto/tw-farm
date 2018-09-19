@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Farm on Terminal World"
   spec.description   = "Farm on Terminal World"
-  spec.homepage      = "https://github.com/tw-farm"
+  spec.homepage      = "https://github.com/twfarm"
   spec.license       = "MIT"
 
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
