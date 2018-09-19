@@ -2,7 +2,7 @@ module Twfarm
   class Test < Thor::Group
 
     def test
-      puts :test
+      pp `pwd`
     end
   end
 end
