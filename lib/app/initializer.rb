@@ -2,16 +2,18 @@ module Twfarm
   class Initializer
 
     def initilize
-      directory
+      create_home_directory
+      move_home_directory
     end
 
     private
-    def directory
-      Dir::chdir(Dir::home)
-      unless Dir::exists?(HOME_DIRECTORY)
-        Dir::mkdir(HOME_DIRECTORY)
+    def create_home_directory
+      unless Dir::exists?("#{Dir::home}/#{HOME_DIRECTORY}")
+        Dir::mkdir("#{Dir::home}/#{HOME_DIRECTORY}")
       end
-      Dir::chdir(HOME_DIRECTORY)
+    end
+    def move_home_directory
+      Dir::chdir("#{Dir::home}/#{HOME_DIRECTORY}")
     end
   end
 end
