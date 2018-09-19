@@ -1,16 +1,16 @@
 require "thor"
 require "constants/version"
 require "constants/directories"
-require "app/init"
+require "app/initializer"
 
 require "commands/test"
 
 module Twfarm
   def self.start
-    Twfarm.init
+    Initializer.new
     Twfarm::CLI.start
   end
   class CLI < Thor
-    register Twfarm::Test, "test", "test", "Puts test"
+    register Test, "test", "test", "Puts test"
   end
 end
