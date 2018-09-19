@@ -1,4 +1,6 @@
 require "thor"
+require "sqlite3"
+
 require "constants/version"
 require "constants/directories"
 require "app/initializer"

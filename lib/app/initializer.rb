@@ -4,6 +4,7 @@ module Twfarm
     def initilize
       create_home_directory
       move_home_directory
+      $db ||= SQLite3::Database.new(Files::DATEBASE)
     end
 
     private
