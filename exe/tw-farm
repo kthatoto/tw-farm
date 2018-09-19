@@ -2,4 +2,4 @@
 
 require "twfarm"
 
-Twfarm::CLI.start
+Twfarm.start
