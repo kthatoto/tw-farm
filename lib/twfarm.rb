@@ -1,5 +1,7 @@
+require "thor"
 require "twfarm/version"
 
 module Twfarm
-  # Your code goes here...
+  class CLI < Thor
+  end
 end
