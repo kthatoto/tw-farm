@@ -1,5 +1,5 @@
 require "thor"
-require "twfarm/version"
+require "constants/version"
 
 require "commands/test"
 
