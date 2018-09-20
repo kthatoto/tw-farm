@@ -12,6 +12,7 @@ require "app/models/plant"
 require "app/models/user"
 require "app/models/shop_item"
 require "app/masters/plant/plant"
+require "app/masters/shop_item/shop_item"
 
 require "app/commands/check"
 require "app/commands/shop"
