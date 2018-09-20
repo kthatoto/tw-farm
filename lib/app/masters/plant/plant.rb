@@ -4,7 +4,7 @@ module Twfarm
       @@plants = []
       def self.all_hash
         YAML.load_file("#{__dir__}/data.yml").map{|row|
-          [row["type_id"], row]
+          [row["id"], row]
         }.to_h
       end
     end

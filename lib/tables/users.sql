@@ -1,4 +1,4 @@
 CREATE TABLE users (
   id integer primary key,
-  money integer default 0
+  tweny integer default 0
 )

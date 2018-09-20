@@ -1,5 +1,5 @@
 module Twfarm
   module UserConfig
-    INITIAL_MONEY = 100
+    INITIAL_TWENY = 100
   end
 end

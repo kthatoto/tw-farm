@@ -1,7 +1,8 @@
 CREATE TABLE shop_items (
   id integer primary key,
-  user_id integer,
-  type_id integer,
-  count integer,
-  level integer default 1
+  shop_itemable_id integer,
+  shop_itemable_type string,
+  price integer,
+  level integer default 1,
+  count integer
 )
