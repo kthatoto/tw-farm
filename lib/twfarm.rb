@@ -1,5 +1,6 @@
 require "thor"
 require "sqlite3"
+require "yaml"
 
 require "constants/version"
 require "constants/directories"
@@ -7,10 +8,12 @@ require "constants/files"
 require "constants/user_config"
 require "app/initializer"
 require "app/db"
-require "app/data/plant"
-require "app/data/user"
+require "app/models/plant"
+require "app/models/user"
+require "app/master/plant/plant"
 
-require "commands/check"
+require "app/commands/check"
+require "app/commands/shop"
 
 module Twfarm
   def self.start
@@ -19,5 +22,6 @@ module Twfarm
   end
   class CLI < Thor
     register Check, "check", "check", "Check plants"
+    register Shop, "shop", "shop", "Shop"
   end
 end
