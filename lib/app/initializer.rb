@@ -5,6 +5,7 @@ module Twfarm
       create_home_directory
       move_home_directory
       DB.new
+      user_initialize
     end
 
     private
@@ -15,6 +16,14 @@ module Twfarm
     end
     def move_home_directory
       Dir::chdir("#{Dir::home}/#{HOME_DIRECTORY}")
+    end
+
+    def user_initialize
+      $user = User.first
+      unless $user
+        User.create
+        $user = User.first
+      end
     end
   end
 end

@@ -4,10 +4,13 @@ require "sqlite3"
 require "constants/version"
 require "constants/directories"
 require "constants/files"
+require "constants/user_config"
 require "app/initializer"
 require "app/db"
+require "app/data/plant"
+require "app/data/user"
 
-require "commands/test"
+require "commands/check"
 
 module Twfarm
   def self.start
@@ -15,6 +18,6 @@ module Twfarm
     Twfarm::CLI.start
   end
   class CLI < Thor
-    register Test, "test", "test", "Puts test"
+    register Check, "check", "check", "Check plants"
   end
 end
