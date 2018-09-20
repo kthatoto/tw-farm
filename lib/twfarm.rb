@@ -3,7 +3,9 @@ require "sqlite3"
 
 require "constants/version"
 require "constants/directories"
+require "constants/files"
 require "app/initializer"
+require "app/db"
 
 require "commands/test"
 
