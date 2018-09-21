@@ -1,7 +1,7 @@
 ---
-- master_id: 1
+- master_id: 101
   shop_itemable_id: 1
   shop_itemable_type: "plant"
-- master_id: 2
+- master_id: 102
   shop_itemable_id: 2
   shop_itemable_type: "plant"
