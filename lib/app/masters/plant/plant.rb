@@ -10,6 +10,18 @@ module Twfarm
       def self.all
         YAML.load_file("#{__dir__}/data.yml")
       end
+
+      def self.get_by_id(id)
+        YAML.load_file("#{__dir__}/data.yml").find{|row|
+          row["id"] == id
+        }
+      end
+
+      def self.get_by_ids(ids)
+        YAML.load_file("#{__dir__}/data.yml").select{|row|
+          ids.include?(row["id"])
+        }
+      end
     end
   end
 end
