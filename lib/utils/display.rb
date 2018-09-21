@@ -10,6 +10,11 @@ module Twfarm
     print " " * 2 * indent if indent > 0
     puts o
   end
+  def self.twputs_error(o, indent = 0)
+    print reden($preword)
+    print " " * 2 * indent if indent > 0
+    puts o
+  end
 
   def self.reden o
     "\e[31m#{o}\e[0m"

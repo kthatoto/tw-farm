@@ -9,8 +9,12 @@ module Twfarm
       show_items
     end
 
-    desc "buy [id]", "Buy items"
+    desc "buy [id]", "Buy item"
     def buy(id = false)
+      unless id
+        Twfarm.twputs_error "Require [id]"
+        return
+      end
       get_shop_items
       Twfarm.twputs "You have bought id:#{id} item!"
     end
