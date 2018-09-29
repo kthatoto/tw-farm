@@ -2,7 +2,12 @@ CREATE TABLE seedlings (
   id integer primary key,
   user_id integer,
   plant_id integer,
+  field_id integer,
   level integer default 1,
-  growth integer default 0,
-  max_growth integer
+  size_potential float,
+  growth_potential float,
+  levelup_probability float,
+  growth_per_tick float,
+  current_growth float,
+  maturity_growth float
 )
