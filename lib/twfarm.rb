@@ -13,6 +13,7 @@ require "app/db"
 
 require "app/models/user"
 require "app/models/seed"
+require "app/models/seedling"
 require "app/models/shop_item"
 require "app/models/field"
 require "app/models/larder"
@@ -22,6 +23,7 @@ require "app/masters/shop_items/shop_item"
 
 require "app/commands/check"
 require "app/commands/seeds"
+require "app/commands/fields"
 
 module Twfarm
   def self.start
@@ -31,5 +33,6 @@ module Twfarm
   class CLI < Thor
     register Check, "check", "check", "Check plants"
     register Seeds, "seeds", "seeds", "See Seeds"
+    register Fields, "fields", "fields", "See Fields"
   end
 end

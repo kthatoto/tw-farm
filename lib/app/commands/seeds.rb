@@ -8,9 +8,9 @@ module Twfarm
       seeds.each do |seed|
         plant = plants_hash[seed[:plant_id]]
         o = ""
-        o << seed[:display_id].to_s + ","
-        o << Twfarm.rgb(plant["name"], plant["background_color"], plant["font_color"]) + ","
-        o << seed[:level].to_s
+        o += seed[:display_id].to_s + ","
+        o += Twfarm.rgb(plant["name"], plant["background_color"], plant["font_color"]) + ","
+        o += seed[:level].to_s
         Twfarm.twputs o
       end
     end

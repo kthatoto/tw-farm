@@ -30,19 +30,36 @@ module Twfarm
       Seed.create(
         plant_id: 1, level: 1,
         size_potential: 1, growth_potential: 1,
+        levelup_probability: 0,
         max_seeds_number: 2, min_seeds_number: 1
       )
       Seed.create(
         plant_id: 1, level: 2,
         size_potential: 1, growth_potential: 1,
+        levelup_probability: 0,
         max_seeds_number: 2, min_seeds_number: 1
       )
       Seed.create(
         plant_id: 2, level: 1,
         size_potential: 1, growth_potential: 1,
+        levelup_probability: 0,
         max_seeds_number: 2, min_seeds_number: 1
       )
       Field.create(space: 100)
+      Seedling.create(
+        plant_id: 1, field_id: Field.first[:id], level: 1,
+        size_potential: 1, growth_potential: 1,
+        levelup_probability: 0,
+        growth_per_tick: 1,
+        max_seeds_number: 2, min_seeds_number: 1
+      )
+      Seedling.create(
+        plant_id: 2, field_id: Field.first[:id], level: 2,
+        size_potential: 1.5, growth_potential: 1.01,
+        levelup_probability: 0,
+        growth_per_tick: 1,
+        max_seeds_number: 2, min_seeds_number: 1
+      )
       Larder.create(level: 1, capacity: 100)
     end
   end

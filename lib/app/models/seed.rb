@@ -9,26 +9,31 @@ module Twfarm
         "INSERT INTO seeds (
           display_id, user_id, plant_id, level,
           size_potential, growth_potential,
+          levelup_probability,
           max_seeds_number, min_seeds_number
-        ) values (?, ?, ?, ?, ?, ?, ?, ?)",
+        ) values (?, ?, ?, ?, ?, ?, ?, ?, ?)",
         display_id, $user[:id], @plant_id, @level,
         @size_potential, @growth_potential,
+        @levelup_probability,
         @max_seeds_number, @min_seeds_number
       )
     end
 
     def self.all
+      raise unless $user
       $db.execute(
         "SELECT
           id, display_id, plant_id, level,
           size_potential, growth_potential,
+          levelup_probability,
           max_seeds_number, min_seeds_number
         FROM seeds WHERE user_id = ?", $user[:id]
       ).map do |row|
         {
           id: row[0], display_id: row[1], plant_id: row[2], level: row[3],
           size_potential: row[4], growth_potential: row[5],
-          max_seeds_number: row[6], min_seeds_number: row[7]
+          levelup_probability: row[6],
+          max_seeds_number: row[7], min_seeds_number: row[8]
         }
       end
     end
@@ -39,6 +44,7 @@ module Twfarm
       @level = values[:level] || 1
       @size_potential = values[:size_potential]
       @growth_potential = values[:growth_potential]
+      @levelup_probability = values[:levelup_probability] || 0
       @max_seeds_number = values[:max_seeds_number]
       @min_seeds_number = values[:min_seeds_number]
     end

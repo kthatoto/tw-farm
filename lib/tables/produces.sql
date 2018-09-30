@@ -9,5 +9,7 @@ CREATE TABLE produces (
   growth_potential float,
   levelup_probability float,
   size float,
-  price integer
+  price integer,
+  max_seeds_number integer,
+  min_seeds_number integer
 )
