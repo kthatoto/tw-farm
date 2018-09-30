@@ -16,7 +16,7 @@ require "app/masters/plant/plant"
 require "app/masters/shop_item/shop_item"
 
 require "app/commands/check"
-require "app/commands/shop"
+require "app/commands/seeds"
 
 module Twfarm
   def self.start
@@ -25,6 +25,6 @@ module Twfarm
   end
   class CLI < Thor
     register Check, "check", "check", "Check plants"
-    register Shop, "shop", "shop", "Shop"
+    register Seeds, "seeds", "seeds", "See Seeds"
   end
 end
