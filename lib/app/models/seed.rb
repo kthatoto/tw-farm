@@ -16,6 +16,22 @@ module Twfarm
       )
     end
 
+    def self.all
+      $db.execute(
+        "SELECT
+          id, plant_id, level,
+          size_potential, growth_potential,
+          max_seeds_number, min_seeds_number
+        FROM seeds WHERE user_id = ?", $user[:id]
+      ).map do |row|
+        {
+          id: row[0], plant_id: row[1], level: row[2],
+          size_potential: row[3], growth_potential: row[4],
+          max_seeds_number: row[5], min_seeds_number: row[6]
+        }
+      end
+    end
+
     private
     def self.get_values(values)
       @plant_id = values[:plant_id]

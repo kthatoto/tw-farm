@@ -23,5 +23,5 @@
   default_min_seeds_number: 1
   optimum_growth: 150
   corruption_growth: 3000
-  background_color: "213;180;124"
-  font_color: "141;81;28"
+  background_color: "141;81;28"
+  font_color: "213;180;124"

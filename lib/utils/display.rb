@@ -44,8 +44,8 @@ module Twfarm
     "\e[4m#{o}\e[0m"
   end
 
-  def self.rgb o
-    "\e[38;2;81;178;76m\e[48;2;255;255;255m#{o}\e[0m"
+  def self.rgb o, background_color, font_color
+    "\e[48;2;#{background_color}m\e[38;2;#{font_color}m#{o}\e[0m"
   end
 
 

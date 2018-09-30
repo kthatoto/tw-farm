@@ -10,7 +10,6 @@ require "utils/display"
 require "app/initializer"
 require "app/db"
 
-require "app/models/plant"
 require "app/models/user"
 require "app/models/seed"
 require "app/models/shop_item"

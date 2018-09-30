@@ -22,6 +22,14 @@ module Twfarm
           ids.include?(row["id"])
         }
       end
+
+      def self.get_hash_by_ids(ids)
+        YAML.load_file("#{__dir__}/data.yml").select{|row|
+          ids.include?(row["id"])
+        }.map{|row|
+          [row["id"], row]
+        }.to_h
+      end
     end
   end
 end
