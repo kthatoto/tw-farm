@@ -9,9 +9,14 @@ require "constants/user_config"
 require "utils/display"
 require "app/initializer"
 require "app/db"
+
 require "app/models/plant"
 require "app/models/user"
+require "app/models/seed"
 require "app/models/shop_item"
+require "app/models/field"
+require "app/models/larder"
+
 require "app/masters/plants/plant"
 require "app/masters/shop_items/shop_item"
 

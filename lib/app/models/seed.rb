@@ -3,7 +3,7 @@ module Twfarm
 
     def self.create(**values)
       raise unless $user
-      get_values
+      get_values(values)
       $db.execute(
         "INSERT INTO seeds (
           user_id, plant_id, level,
@@ -17,7 +17,7 @@ module Twfarm
     end
 
     private
-    def get_values
+    def self.get_values(values)
       @plant_id = values[:plant_id]
       @level = values[:level] || 1
       @size_potential = values[:size_potential]
