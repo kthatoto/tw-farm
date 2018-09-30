@@ -4,13 +4,14 @@ module Twfarm
     def self.create(**values)
       raise unless $user
       get_values(values)
+      display_id = "sd-" + SecureRandom.hex(6)
       $db.execute(
         "INSERT INTO seeds (
-          user_id, plant_id, level,
+          display_id, user_id, plant_id, level,
           size_potential, growth_potential,
           max_seeds_number, min_seeds_number
-        ) values (?, ?, ?, ?, ?, ?, ?)",
-        $user[:id], @plant_id, @level,
+        ) values (?, ?, ?, ?, ?, ?, ?, ?)",
+        display_id, $user[:id], @plant_id, @level,
         @size_potential, @growth_potential,
         @max_seeds_number, @min_seeds_number
       )
@@ -19,15 +20,15 @@ module Twfarm
     def self.all
       $db.execute(
         "SELECT
-          id, plant_id, level,
+          id, display_id, plant_id, level,
           size_potential, growth_potential,
           max_seeds_number, min_seeds_number
         FROM seeds WHERE user_id = ?", $user[:id]
       ).map do |row|
         {
-          id: row[0], plant_id: row[1], level: row[2],
-          size_potential: row[3], growth_potential: row[4],
-          max_seeds_number: row[5], min_seeds_number: row[6]
+          id: row[0], display_id: row[1], plant_id: row[2], level: row[3],
+          size_potential: row[4], growth_potential: row[5],
+          max_seeds_number: row[6], min_seeds_number: row[7]
         }
       end
     end

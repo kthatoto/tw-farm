@@ -1,5 +1,6 @@
 CREATE TABLE seedlings (
   id integer primary key,
+  display_id string,
   user_id integer,
   plant_id integer,
   field_id integer,

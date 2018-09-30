@@ -1,5 +1,6 @@
 CREATE TABLE produces (
   id integer primary key,
+  display_id string,
   user_id integer,
   plant_id integer,
   larder_id integer,

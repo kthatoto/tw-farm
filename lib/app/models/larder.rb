@@ -4,9 +4,10 @@ module Twfarm
     def self.create(**values)
       raise unless $user
       get_values(values)
+      display_id = "ld-" + SecureRandom.hex(6)
       $db.execute(
-        "INSERT INTO larders (user_id, level, capacity) values (?, ?, ?)",
-        $user[:id], @level, @capacity
+        "INSERT INTO larders (display_id, user_id, level, capacity) values (?, ?, ?, ?)",
+        display_id, $user[:id], @level, @capacity
       )
     end
 

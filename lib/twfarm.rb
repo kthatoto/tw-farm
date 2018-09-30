@@ -1,6 +1,7 @@
 require "thor"
 require "sqlite3"
 require "yaml"
+require "securerandom"
 
 require "constants/version"
 require "constants/directories"

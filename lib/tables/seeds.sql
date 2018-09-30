@@ -1,5 +1,6 @@
 CREATE TABLE seeds (
   id integer primary key,
+  display_id string,
   user_id integer,
   plant_id integer,
   level integer default 1,
