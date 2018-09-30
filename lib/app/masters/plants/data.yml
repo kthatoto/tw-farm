@@ -1,0 +1,27 @@
+---
+- id: 1
+  name: turnip
+  base_selling_price: 100
+  base_seed_price: 80
+  max_maturity: 30
+  base_size: 1.0
+  required_spqce: 2
+  default_max_seeds_number: 2
+  default_min_seeds_number: 1
+  optimum_growth: 35
+  corruption_growth: 1800
+  background_color: "220;220;220"
+  font_color: "0;130;75"
+- id: 2
+  name: potato
+  base_selling_price: 120
+  base_seed_price: 90
+  max_maturity: 120
+  base_size: 1.5
+  required_spqce: 2
+  default_max_seeds_number: 2
+  default_min_seeds_number: 1
+  optimum_growth: 150
+  corruption_growth: 3000
+  background_color: "213;180;124"
+  font_color: "141;81;28"
