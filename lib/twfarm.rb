@@ -33,6 +33,6 @@ module Twfarm
   class CLI < Thor
     register Check, "check", "check", "Check plants"
     register Seeds, "seeds", "seeds", "See Seeds"
-    register Fields, "fields", "fields", "See Fields"
+    register Fields, "fields", "fields <options>", "See Fields"
   end
 end
