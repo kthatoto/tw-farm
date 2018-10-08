@@ -27,6 +27,15 @@ module Twfarm
       }.first
     end
 
+    def self.find_by_display_id(display_id)
+      $db.execute(
+        "SELECT id, display_id, space FROM fields WHERE display_id = ?",
+        display_id
+      ).map{|row|
+        { id: row[0], display_id: row[1], space: row[2] }
+      }.first
+    end
+
 
     private
     def self.get_values(values)

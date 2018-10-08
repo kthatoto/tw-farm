@@ -24,6 +24,7 @@ require "app/masters/shop_items/shop_item"
 require "app/commands/check"
 require "app/commands/seeds"
 require "app/commands/fields"
+require "app/commands/plant"
 
 module Twfarm
   def self.start
@@ -34,5 +35,6 @@ module Twfarm
     register Check, "check", "check", "Check plants"
     register Seeds, "seeds", "seeds", "See Seeds"
     register Fields, "fields", "fields <options>", "See Fields"
+    register Plant, "plant", "plant [seed_id] [field_id]", "Plant [seed] to [field]"
   end
 end

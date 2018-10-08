@@ -2,8 +2,8 @@ module Twfarm
   class Fields < Thor::Group
 
     def fields
-      if option_index = ARGV.index("-d")
-        return detail(ARGV[option_index + 1])
+      if detail_option_index = ARGV.index("-d") || ARGV.index("--detail")
+        return detail(ARGV[detail_option_index + 1])
       end
       return index
     end
@@ -24,8 +24,26 @@ module Twfarm
         Twfarm.twputs o
       end
     end
-    def detail(field_id)
-      Twfarm.twputs field_id
+    def detail(field_display_id)
+      return Twfarm.twputs_error "field_id is required" unless field_display_id
+      field = Field.find_by_display_id(field_display_id)
+      return Twfarm.twputs_error "field:#{field_display_id} is not found" unless field
+
+      seedlings = Seedling.get_by_field_id(field[:id])
+      plants_hash = Master::Plant.get_hash_by_ids(
+        seedlings.map{|seedling| seedling[:plant_id]}.uniq
+      )
+
+      Twfarm.twputs Twfarm.greenen("id,name,level,growth")
+      seedlings.each do |seedling|
+        plant = plants_hash[seedling[:plant_id]]
+        o = ""
+        o += seedling[:display_id] + ","
+        o += Twfarm.rgb(plant["name"], plant["background_color"], plant["font_color"]) + ","
+        o += seedling[:level].to_s + ","
+        o += seedling[:current_growth].floor.to_s + "/" + seedling[:maturity_growth].floor.to_s
+        Twfarm.twputs o
+      end
     end
   end
 end
