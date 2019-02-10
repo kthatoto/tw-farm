@@ -1,3 +1,3 @@
 module Twfarm
-  HOME_DIRECTORY = ".termworld"
+  HOME_DIRECTORY = ".twfarm"
 end

@@ -27,6 +27,11 @@ module Twfarm
     def detail(field_display_id)
       return Twfarm.twputs_error "field_id is required" unless field_display_id
       field = Field.find_by_display_id(field_display_id)
+      #### start tmp
+      unless field
+        field = Field.find_by_display_id(field_display_id.slice(4, 20))
+      end
+      #### end tmp
       return Twfarm.twputs_error "field:#{field_display_id} is not found" unless field
 
       seedlings = Seedling.get_by_field_id(field[:id])
