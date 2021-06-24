@@ -8,5 +8,5 @@ RUN apt-get install libsqlite3-dev
 RUN apt-get install sqlite3
 RUN bundle install
 
-RUN echo "alias termworld='bundle exec termworld'" >> ./.bashrc
+RUN echo "alias termworld='bundle exec tw-farm'" >> ./.bashrc
 ENTRYPOINT bash
